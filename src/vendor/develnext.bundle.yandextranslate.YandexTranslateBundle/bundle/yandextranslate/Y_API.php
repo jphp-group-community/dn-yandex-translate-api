@@ -22,8 +22,7 @@
 
 		final protected function httpPost ($url, $translateString) {
 
-			// TODO: add urlencode, mb bug
-			$httpResponse = $this->http->post($url, ["text" => urlencode($translateString)]);
+			$httpResponse = $this->http->post($url, ["text" => $translateString]);
 
 			$json = json_decode($httpResponse->body(), true);
 
