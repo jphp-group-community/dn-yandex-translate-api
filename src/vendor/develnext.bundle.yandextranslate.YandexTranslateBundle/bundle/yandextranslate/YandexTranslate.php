@@ -12,7 +12,12 @@
 		const HOST = "https://translate.yandex.net/";
 		const BASE_URL = 'api/v1.5/tr.json/translate?key={API_KEY}&lang={LANG}&format=plain';
 
-		public function __construct ($token) {
+        /**
+         * YandexTranslate constructor.
+         * @param string $token
+         * @throws YandexTranslateException
+         */
+        public function __construct ($token) {
 			$token = trim($token);
 
 			if(isset($token) && !empty($token)) {
@@ -23,7 +28,13 @@
 			}
 		}
 
-		public function translate ($translateString, $lang = "en-ru") {
+        /**
+         * Перевод текста
+         * @param string $translateString
+         * @param string $lang
+         * @return string
+         */
+        public function translate ($translateString, $lang = "en-ru") {
 			$url = self::HOST . $this->urlReplacer([
 						'{API_KEY}' => $this->token,
 						'{LANG}' => $lang

@@ -1,8 +1,6 @@
 <?php
 	namespace bundle\yandextranslate;
 
-	use php\framework\Logger;
-
 	/**
 	 * Class YandexTranslateException
 	 */
@@ -33,7 +31,7 @@
 
 
 
-		final public function __construct($errorCode = 200) {
+		final public function __construct($errorCode = Y_API::SUCCESS) {
 
 			if(array_key_exists($errorCode, $this->_message)) {
 				parent::__construct($this->_message[$errorCode], $errorCode);
