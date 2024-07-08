@@ -4,6 +4,8 @@
 
 Подключить пакет "Yandex Translate API" и "HTTP Client".
 
+ps. API стал платным. https://translate.yandex.ru/developers/stat
+
 ##### Пример использования:
 
 ```php
